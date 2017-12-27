@@ -1,0 +1,39 @@
+#Launch Configuration
+ #Autoscaling
+ variable "health_check_type" {
+   description = "Controls how health checking is done. Values are - EC2 and ELB"
+   default = "EC2"
+ }
+ variable "health_check_grace_period" {
+   description = "Time (in seconds) after instance comes into service before checking health"
+   default     = 300
+ }
+
+ variable "asg_min" {
+   description = "Min numbers of servers in ASG"
+   default     = "0"
+ }
+ variable "asg_max" {
+   description = "Max numbers of servers in ASG"
+   default     = "2"
+ }
+ variable "asg_desired" {
+   description = "Desired numbers of servers in ASG"
+   default     = "1"
+ }
+ variable "wait_for_capacity_timeout" {
+   description = "A maximum duration that Terraform should wait for ASG instances to be healthy before timing out. (See also Waiting for Capacity below.) Setting this to '0' causes Terraform to skip all Capacity Waiting behavior."
+   default     = "10m"
+ }
+ variable "availability_zones" {
+  # No spaces allowed between az names!
+  default = "us-east-1a,us-east-1b,us-east-1c"
+}
+ # From other modules
+#
+variable "webapp_lc_id" {}
+variable "webapp_lc_name" {}
+variable "webapp_elb_name" {}
+variable "subnet_id" {
+  description = "ID of the AWS VPC subnet to use"
+}

@@ -1,0 +1,58 @@
+variable "aws_amis" {
+description = "Mapping Base AMI to launch on identified region instances"
+default = {
+  us-east-1 = "ami-55ef662f"
+  us-east-2 = "ami-c998b6b2"
+}
+ }
+
+ variable "instance_type" {
+   description = "Instance Name"
+   default = "t2.micro"
+ }
+
+ variable "enable_monitoring" {
+   description = "Enables/disables detailed monitoring."
+   default = false
+ }
+
+ variable "ebs_device_name" {
+   description = "block device atatched to the instance"
+   default = "/dev/xvdz"
+ }
+ variable "ebs_volume_type" {
+   description = "block device atatched to the instance"
+   default = "gp2"
+ }
+ variable "ebs_volume_size" {
+   description = "block device atatched to the instance"
+   default = "10"
+ }
+
+ variable "root_volume_type" {
+   description = "root block device atatched to the instance"
+   default = "gp2"
+ }
+ variable "root_volume_size" {
+   description = "root block device atatched to the instance"
+   default = "10"
+ }
+ variable "tags" {
+   description = "A list of tag blocks"
+   default     = []
+ }
+ variable "group_name"{
+   description = "Group name becomes the base of the hostname of the instance"
+ }
+ variable "instance_name" {
+   description = "Instance Name"
+   default = "levvel-web"
+ }
+ # From other modules
+#
+variable "webapp_http_inbound_sg_id" {}
+variable "webapp_ssh_inbound_sg_id" {}
+variable "webapp_outbound_sg_id" {}
+variable "key_name" {
+  default = "terraform-demo"
+}
