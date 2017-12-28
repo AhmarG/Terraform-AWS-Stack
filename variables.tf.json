@@ -1,0 +1,7 @@
+variable "key_name" {
+  description = "key name for the instance"
+  default = "terraform-demo"
+}
+
+variable "vpc_main_id" {
+}

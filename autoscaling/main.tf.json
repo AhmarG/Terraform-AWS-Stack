@@ -2,7 +2,7 @@
 #Autoscaling group
 resource "aws_autoscaling_group" "webapp_asg" {
   name = "demo_webapp_asg-${var.webapp_lc_name}"
-  vpc_zone_identifier = ["${split(",", var.subnet_ids)}"]
+  vpc_zone_identifier = ["${split(",", var.subnet_id)}"]
   health_check_type = "${var.health_check_type}"
   health_check_grace_period = "${var.health_check_grace_period}"
   min_size = "${var.asg_min}"
@@ -75,4 +75,7 @@ resource "aws_cloudwatch_metric_alarm" "scale_down_alarm" {
   }
   alarm_description = "EC2 CPU Utilization"
   alarm_actions = ["${aws_autoscaling_policy.scale_down.arn}"]
+}
+output "asg_id" {
+  value = "${aws_autoscaling_group.webapp_asg.id}"
 }

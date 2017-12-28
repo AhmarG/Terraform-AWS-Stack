@@ -1,9 +1,9 @@
-output "webapp_http_inbound_sg_id" {
-  value = "${aws_security_group.webapp_http_inbound_sg.id}"
-}
-output "webapp_ssh_inbound_sg_id" {
-  value = "${aws_security_group.webapp_ssh_inbound_sg.id}"
-}
-output "webapp_outbound_sg_id" {
-  value = "${aws_security_group.webapp_outbound_sg.id}"
-}
+#output "webapp_http_inbound_sg_id" {
+#  value = "${aws_security_group.webapp_http_inbound_sg.id}"
+#}
+#output "webapp_ssh_inbound_sg_id" {
+#  value = "${aws_security_group.webapp_ssh_inbound_sg.id}"
+#}
+#output "webapp_outbound_sg_id" {
+#  value = "${aws_security_group.webapp_outbound_sg.id}"
+#}

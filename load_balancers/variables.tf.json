@@ -1,0 +1,10 @@
+variable "availability_zones" {
+  # No spaces allowed between az names!
+  default = ["us-east-1a","us-east-1b","us-east-1c"]
+}
+
+#
+# From other modules
+#
+variable "public_subnet_id" {}
+variable "webapp_http_inbound_sg_id" {}
