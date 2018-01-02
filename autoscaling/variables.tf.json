@@ -29,6 +29,14 @@
   # No spaces allowed between az names!
   default = "us-east-1a,us-east-1b,us-east-1c"
 }
+variable "group_name"{
+  description = "Group name becomes the base of the hostname of the instance"
+  default = "dev"
+}
+variable "instance_name" {
+  description = "Instance Name"
+  default = "levvel-web"
+}
  # From other modules
 #
 variable "webapp_lc_id" {}

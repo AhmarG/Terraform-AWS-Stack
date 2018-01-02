@@ -9,15 +9,18 @@ resource "aws_autoscaling_group" "webapp_asg" {
   max_size =  "${var.asg_max}"
   wait_for_elb_capacity = false
   desired_capacity = "${var.asg_desired}"
-  wait_for_capacity_timeout = "{var.wait_for_capacity_timeout}"
+  wait_for_capacity_timeout = "${var.wait_for_capacity_timeout}"
   force_delete = true
   launch_configuration = "${var.webapp_lc_id}"
   #load_balancers = ["${var.webapp_elb_name}"]
 
 tag {
     key                 = "Name"
-    value               = "web-auto-scaling"
+    value               = "${format("%s%s%03d", var.instance_name, var.group_name, count.index + 1)}"
+    #Name = "${format("%s%s%03d", var.instance_name, var.group_name, count.index + 1)}"
+    #Group = "${var.group_name}"
     propagate_at_launch = "true"
+
   }
   lifecycle {
     create_before_destroy = true
