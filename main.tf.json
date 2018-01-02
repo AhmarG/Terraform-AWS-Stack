@@ -1,4 +1,4 @@
-variable "region" {
+provider "aws" {
   description ="AWS region to deploy the EC2 instance"
   default = "us-east-1"
 }
