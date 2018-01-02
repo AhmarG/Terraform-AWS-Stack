@@ -1,7 +1,8 @@
 # Public Subnet
 #
 resource "aws_subnet" "demo_public" {
-  vpc_id = "${aws_vpc.vpc_main.id}"
+  #vpc_id = "${aws_vpc.vpc_main.id}"
+  vpc_id = "${var.vpc_main}"
   cidr_block = "${var.public_subnet_cidr}"
   availability_zone = "${element(var.availability_zones, 0)}"
   tags {
@@ -13,7 +14,8 @@ output "public_subnet_id" {
 }
 
 resource "aws_route_table" "demo_public" {
-  vpc_id = "${aws_vpc.vpc_main.id}"
+  #vpc_id = "${aws_vpc.vpc_main.id}"
+  vpc_id = "${var.vpc_main}"
   route {
       cidr_block = "0.0.0.0/0"
       gateway_id = "${aws_internet_gateway.vpc_main.id}"
