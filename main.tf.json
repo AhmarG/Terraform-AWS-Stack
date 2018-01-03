@@ -23,10 +23,8 @@ module "load_balancers" {
 
 module "security_group" {
   source = "./security_group"
-  vpc_main_id = "${module.network.vpc_main_id}"
-  #vpc_main_id = "${var.vpc_main_id}"
-
-
+  #vpc_main_id = "${module.network.vpc_main_id}"
+  vpc_main_id = "${var.vpc_main}"
 }
 module "network" {
   source = "./network"
