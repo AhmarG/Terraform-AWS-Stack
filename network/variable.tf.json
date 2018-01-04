@@ -19,5 +19,5 @@ variable "private_subnet_cidr" {
 }
 variable "key_name" {}
 variable "vpc_main" {
-  default = "vpc-661c311e"
+  default = "vpc-2f2f0657"
 }

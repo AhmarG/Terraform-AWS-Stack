@@ -3,8 +3,8 @@ variable "key_name" {
   default = "terraform-demo"
 }
 
-variable "vpc_main_id"{
-}
+#variable "vpc_main_id"{
+#}
 variable "vpc_main" {
-  default = "vpc-661c311e"
+  default = "vpc-2f2f0657"
 }

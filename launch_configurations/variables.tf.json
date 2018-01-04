@@ -44,20 +44,15 @@ default = {
    description = "A list of tag blocks"
    default     = []
  }
- variable "group_name"{
-   description = "Group name becomes the base of the hostname of the instance"
-   default = "dev"
- }
- variable "instance_name" {
-   description = "Instance Name"
-   default = "levvel-web"
- }
+
+
  variable "key_name" {
    description = "key name for the instance"
    default = "terraform-demo"
  }
  # From other modules
-#
+
 variable "webapp_http_inbound_sg_id" {}
 variable "webapp_ssh_inbound_sg_id" {}
 variable "webapp_outbound_sg_id" {}
+#variable "webapp_elb_name" {}

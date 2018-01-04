@@ -8,6 +8,7 @@ security_groups = [
     "${var.webapp_outbound_sg_id}"
   ]
 
+#load_balancers  = "${var.webapp_elb_name}"
 
 ebs_block_device = [
   {

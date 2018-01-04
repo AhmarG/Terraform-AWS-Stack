@@ -12,7 +12,7 @@ resource "aws_autoscaling_group" "webapp_asg" {
   wait_for_capacity_timeout = "${var.wait_for_capacity_timeout}"
   force_delete = true
   launch_configuration = "${var.webapp_lc_id}"
-  #load_balancers = ["${var.webapp_elb_name}"]
+  load_balancers = ["${var.webapp_elb_name}"]
 
 tag {
     key                 = "Name"
