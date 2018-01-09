@@ -1,7 +1,7 @@
 # Terraform-AWS-Stack
-Provisioning AWS Stack  using Terraform
+Provisioning AWS Stack using Terraform
 
-HOW TO LAUNCH
-- terraform get  # this load all the modules
-- terraform plan  -out <<filename.plan>> #This execute the modules and save excutable  to a file.
+HOW TO LAUNCH (once AWS is configured)
+- terraform get  # Downloads and installs modules needed for the configuration
+- terraform plan  -out <<filename.plan>> # This generates an execution plan file to the given path
 - terraform apply "filename.plan"
