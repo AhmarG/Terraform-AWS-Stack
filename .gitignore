@@ -1,0 +1,13 @@
+# Compiled files
+*.tfvars
+*.tfplan
+*.tfstate
+*.tfstate.backup
+
+# Module directory
+.terraform/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
