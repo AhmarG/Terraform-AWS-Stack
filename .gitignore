@@ -1,11 +1,12 @@
 # Compiled files
-*.tfvars
+**/*.tfstate
+**/*.tfstate.lock.*
+**/*.tfstate.backup
+**/.terraform/*
+**/.terraform/
 *.tfplan
-*.tfstate
-*.tfstate.backup
+backup.zip
 
-# Module directory
-.terraform/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
